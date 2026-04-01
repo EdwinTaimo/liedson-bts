@@ -1,0 +1,122 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    color: white;
+}
+
+header {
+    background-color: #333;
+    color: white;
+    padding: 20px 0;
+}
+
+.logo-container {
+    max-width: 960px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo-text {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.vodacom-logo {
+    height: 40px;
+}
+
+.hero {
+    background-image: url("https://images.unsplash.com/photo-1593642532400-2682810df593?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1950&q=80"); /* Exemplo de imagem de fundo */
+    background-size: cover;
+    background-position: center;
+    padding: 100px 0;
+    text-align: center;
+}
+
+.hero-content {
+    max-width: 600px;
+    margin: 0 auto;
+    background-color: rgba(0, 0, 0, 0.5); /* Fundo semitransparente para o texto */
+    padding: 20px;
+    border-radius: 10px;
+}
+
+h1 {
+    font-size: 32px;
+    margin-bottom: 20px;
+}
+
+.pacotes {
+    background-color: black;
+    padding: 50px 0;
+}
+
+.container {
+    max-width: 960px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+}
+
+.column {
+    width: 30%;
+}
+
+h2 {
+    color: white;
+    text-align: center;
+    background-color: #f44336; /* Cor de fundo vermelha Vodacom */
+    padding: 10px 0;
+    border-radius: 5px;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+li {
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.mb {
+    font-weight: bold;
+}
+
+.price {
+    color: #f44336; /* Cor de preço vermelha Vodacom */
+}
+
+.extras {
+    background-color: black;
+    padding: 50px 0;
+}
+
+h3 {
+    color: white;
+    background-color: #f44336; /* Cor de fundo vermelha Vodacom */
+    padding: 10px 0;
+    text-align: center;
+    border-radius: 5px;
+}
+
+footer {
+    background-color: #333;
+    color: white;
+    padding: 20px 0;
+    text-align: center;
+}
+
+a {
+    color: white;
+    text-decoration: none;
+}
+
+.metodos-pagamento {
+    margin-top: 10px;
+}
