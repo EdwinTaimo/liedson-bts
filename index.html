@@ -3,39 +3,39 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Liedson BTS — Vodacom</title>
+    <title>Liedson BTS — Ativação de Dados</title>
     <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
     <nav class="apple-nav">
         <div class="nav-content">
-            <span>Liedson BTS</span>
-            <img src="https://upload.wikimedia.org/wikipedia/commons/d/d6/Vodafone_icon.svg" alt="Vodacom" class="nav-logo">
+            <span class="brand">Liedson BTS</span>
+            <span class="status">Vodacom Online</span>
         </div>
     </nav>
 
-    <section class="hero">
-        <h2 class="fade-in">Pacotes de Dados.</h2>
-        <h1 class="gradient-text">Velocidade que acompanha o teu ritmo.</h1>
+    <header class="hero">
+        <h1 class="gradient-text">Pacotes de Dados.</h1>
+        <p class="subtitle">Escolha o seu plano e ative em segundos.</p>
+    </header>
+
+    <section class="container">
+        <div class="category-header">
+            <h2>Todos os Pacotes</h2>
+        </div>
+        <div class="grid-pacotes" id="pacotes-display">
+            </div>
     </section>
 
-    <section class="grid-container" id="pacotes-grid">
-        </section>
-
-    <div id="payment-modal" class="modal">
-        <div class="modal-content">
-            <h3>Finalizar Compra</h3>
-            <p id="modal-details"></p>
-            <div class="payment-box">
-                <p>Envie o valor via M-Pesa para:</p>
-                <strong class="phone-number">84 380 7106</strong>
-                <p class="name">Liedson Pedro Manuel Cheia</p>
-            </div>
-            <button onclick="confirmarPagamento()" class="apple-btn">Já enviei o M-Pesa</button>
-            <button onclick="closeModal()" class="btn-close">Cancelar</button>
+    <section class="activation-section">
+        <div class="activation-card">
+            <h3>Ativar Agora</h3>
+            <p>Cole abaixo a mensagem confirmando o seu M-Pesa para validar a transação no nosso grupo.</p>
+            <textarea id="mpesa-msg" placeholder="Ex: ID da transação PP260331..."></textarea>
+            <button onclick="enviarParaGrupo()" class="apple-btn-large">Validar e Enviar para Grupo</button>
         </div>
-    </div>
+    </section>
 
     <script src="script.js"></script>
 </body>
