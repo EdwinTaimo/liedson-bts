@@ -1,39 +1,47 @@
-const pacotes = [
-    { id: 1, nome: "400 MB", preco: 10.00, tipo: "Diário" },
-    { id: 2, nome: "1024 MB", preco: 26.00, tipo: "Diário" },
-    { id: 3, nome: "7.270 MB", preco: 190.00, tipo: "Semanal" }
+const dadosPacotes = [
+    // Diários
+    { tipo: "Diário", mb: "400 MB", preco: "10,00 MT" },
+    { tipo: "Diário", mb: "600 MB", preco: "15,00 MT" },
+    { tipo: "Diário", mb: "1024 MB", preco: "26,00 MT" },
+    { tipo: "Diário", mb: "2050 MB", preco: "52,00 MT" },
+    { tipo: "Diário", mb: "10240 MB", preco: "260,00 MT" },
+    // Semanais
+    { tipo: "Semanal", mb: "3.482 MB", preco: "95,00 MT" },
+    { tipo: "Semanal", mb: "7.270 MB", preco: "190,00 MT" },
+    { tipo: "Semanal", mb: "10.957 MB", preco: "290,00 MT" },
+    // Mensais
+    { tipo: "Mensal", mb: "7.143 MB", preco: "190,00 MT" },
+    { tipo: "Mensal", mb: "19.316 MB", preco: "550,00 MT" },
+    { tipo: "Mensal", mb: "54.886 MB", preco: "1.450,00 MT" }
 ];
 
-let pacoteSelecionado = null;
-
-function renderPacotes() {
-    const grid = document.getElementById('pacotes-grid');
-    grid.innerHTML = pacotes.map(p => `
-        <div class="card" onclick="abrirCompra(${p.id})">
-            <h4>${p.tipo}</h4>
-            <h2>${p.nome}</h2>
-            <p class="price">${p.preco.toFixed(2)} MT</p>
-            <button class="apple-btn">Comprar</button>
+function carregarPacotes() {
+    const display = document.getElementById('pacotes-display');
+    display.innerHTML = dadosPacotes.map(p => `
+        <div class="card">
+            <span class="category">${p.tipo}</span>
+            <div class="size">${p.mb}</div>
+            <div class="price">${p.preco}</div>
         </div>
     `).join('');
 }
 
-function abrirCompra(id) {
-    pacoteSelecionado = pacotes.find(p => p.id === id);
-    document.getElementById('modal-details').innerText = `Pacote: ${pacoteSelecionado.nome} - Valor: ${pacoteSelecionado.preco} MT`;
-    document.getElementById('payment-modal').style.display = 'block';
+function enviarParaGrupo() {
+    const mensagemMpesa = document.getElementById('mpesa-msg').value;
+    const linkGrupo = "https://chat.whatsapp.com/Cmh4RiCpWfmFZhfShTfc1C";
+    
+    if (mensagemMpesa.trim().length < 20) {
+        alert("Por favor, cole a mensagem completa do M-Pesa para validação.");
+        return;
+    }
+
+    // Como links de grupos não aceitam pre-enchimento de texto via URL da mesma forma que o wa.me,
+    // O sistema copia o texto para a área de transferência e abre o link do grupo.
+    
+    navigator.clipboard.writeText(mensagemMpesa).then(() => {
+        alert("Mensagem copiada! Cole-a no grupo que vai abrir agora.");
+        window.open(linkGrupo, '_blank');
+    });
 }
 
-function confirmarPagamento() {
-    // Aqui simulamos a automação. 
-    // O cliente envia os dados para o SEU WhatsApp.
-    const msg = `Olá Liedson! Acabei de enviar ${pacoteSelecionado.preco}MT para o pacote ${pacoteSelecionado.nome}. Por favor, valide o ID da transação.`;
-    const url = `https://wa.me/258843807106?text=${encodeURIComponent(msg)}`;
-    window.open(url, '_blank');
-}
-
-function closeModal() {
-    document.getElementById('payment-modal').style.display = 'none';
-}
-
-renderPacotes();
+window.onload = carregarPacotes;
