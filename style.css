@@ -1,122 +1,91 @@
+:root {
+    --bg-color: #f5f5f7;
+    --card-bg: rgba(255, 255, 255, 0.8);
+    --text-main: #1d1d1f;
+    --accent: #0071e3;
+    --vodacom-red: #e60000;
+}
+
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Inter', sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-main);
     margin: 0;
-    color: white;
+    -webkit-font-smoothing: antialiased;
 }
 
-header {
-    background-color: #333;
-    color: white;
-    padding: 20px 0;
+.apple-nav {
+    background: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(20px);
+    height: 48px;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    border-bottom: 1px solid rgba(0,0,0,0.1);
 }
 
-.logo-container {
-    max-width: 960px;
+.nav-content {
+    max-width: 980px;
     margin: 0 auto;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    height: 100%;
+    padding: 0 20px;
+    font-weight: 600;
 }
 
-.logo-text {
-    font-size: 24px;
-    font-weight: bold;
-}
-
-.vodacom-logo {
-    height: 40px;
-}
+.nav-logo { height: 20px; }
 
 .hero {
-    background-image: url("https://images.unsplash.com/photo-1593642532400-2682810df593?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1950&q=80"); /* Exemplo de imagem de fundo */
-    background-size: cover;
-    background-position: center;
-    padding: 100px 0;
     text-align: center;
+    padding: 120px 20px 60px;
 }
 
-.hero-content {
-    max-width: 600px;
+.gradient-text {
+    font-size: 56px;
+    font-weight: 700;
+    background: linear-gradient(90deg, #1d1d1f, #86868b);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+    max-width: 1100px;
     margin: 0 auto;
-    background-color: rgba(0, 0, 0, 0.5); /* Fundo semitransparente para o texto */
     padding: 20px;
-    border-radius: 10px;
 }
 
-h1 {
-    font-size: 32px;
-    margin-bottom: 20px;
+.card {
+    background: var(--card-bg);
+    border-radius: 20px;
+    padding: 30px;
+    transition: transform 0.3s ease;
+    cursor: pointer;
+    border: 1px solid rgba(0,0,0,0.05);
 }
 
-.pacotes {
-    background-color: black;
-    padding: 50px 0;
-}
+.card:hover { transform: scale(1.02); }
 
-.container {
-    max-width: 960px;
-    margin: 0 auto;
-    display: flex;
-    justify-content: space-between;
-}
+.card h4 { color: #86868b; margin: 0; text-transform: uppercase; font-size: 12px; }
+.card h2 { font-size: 28px; margin: 10px 0; }
+.card .price { font-size: 18px; color: var(--accent); font-weight: 600; }
 
-.column {
-    width: 30%;
-}
-
-h2 {
+.apple-btn {
+    background: var(--accent);
     color: white;
-    text-align: center;
-    background-color: #f44336; /* Cor de fundo vermelha Vodacom */
-    padding: 10px 0;
-    border-radius: 5px;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 980px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
 }
 
-ul {
-    list-style-type: none;
-    padding: 0;
-}
-
-li {
-    margin-bottom: 10px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.mb {
-    font-weight: bold;
-}
-
-.price {
-    color: #f44336; /* Cor de preço vermelha Vodacom */
-}
-
-.extras {
-    background-color: black;
-    padding: 50px 0;
-}
-
-h3 {
-    color: white;
-    background-color: #f44336; /* Cor de fundo vermelha Vodacom */
-    padding: 10px 0;
-    text-align: center;
-    border-radius: 5px;
-}
-
-footer {
-    background-color: #333;
-    color: white;
-    padding: 20px 0;
-    text-align: center;
-}
-
-a {
-    color: white;
-    text-decoration: none;
-}
-
-.metodos-pagamento {
-    margin-top: 10px;
-}
+/* Modal Estilo Apple */
+.modal { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.4); backdrop-filter: blur(5px); z-index: 2000; }
+.modal-content { background: white; width: 90%; max-width: 400px; margin: 15% auto; padding: 30px; border-radius: 20px; text-align: center; }
