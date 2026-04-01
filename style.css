@@ -1,118 +1,122 @@
-:root {
-    --bg: #f5f5f7;
-    --card: #ffffff;
-    --text: #1d1d1f;
-    --accent: #0071e3;
-    --red: #e60000;
-}
-
 body {
-    font-family: 'Inter', sans-serif;
-    background-color: var(--bg);
-    color: var(--text);
+    font-family: Arial, sans-serif;
     margin: 0;
-    line-height: 1.5;
+    color: white;
 }
 
-.apple-nav {
-    background: rgba(255, 255, 255, 0.8);
-    backdrop-filter: blur(20px);
-    padding: 15px 0;
-    position: fixed;
-    width: 100%;
-    top: 0;
-    z-index: 100;
-    border-bottom: 1px solid rgba(0,0,0,0.05);
+header {
+    background-color: #333;
+    color: white;
+    padding: 20px 0;
 }
 
-.nav-content {
-    max-width: 1000px;
+.logo-container {
+    max-width: 960px;
     margin: 0 auto;
     display: flex;
     justify-content: space-between;
-    padding: 0 20px;
-    font-weight: 600;
+    align-items: center;
+}
+
+.logo-text {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.vodacom-logo {
+    height: 40px;
 }
 
 .hero {
+    background-image: url("https://images.unsplash.com/photo-1593642532400-2682810df593?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1950&q=80"); /* Exemplo de imagem de fundo */
+    background-size: cover;
+    background-position: center;
+    padding: 100px 0;
     text-align: center;
-    padding: 120px 20px 40px;
 }
 
-.gradient-text {
-    font-size: 48px;
-    font-weight: 700;
-    letter-spacing: -1px;
-    background: linear-gradient(180deg, #1d1d1f 0%, #434344 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+.hero-content {
+    max-width: 600px;
+    margin: 0 auto;
+    background-color: rgba(0, 0, 0, 0.5); /* Fundo semitransparente para o texto */
+    padding: 20px;
+    border-radius: 10px;
+}
+
+h1 {
+    font-size: 32px;
+    margin-bottom: 20px;
+}
+
+.pacotes {
+    background-color: black;
+    padding: 50px 0;
 }
 
 .container {
-    max-width: 1100px;
+    max-width: 960px;
     margin: 0 auto;
-    padding: 20px;
-}
-
-.grid-pacotes {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
-    gap: 20px;
-}
-
-.card {
-    background: var(--card);
-    border-radius: 18px;
-    padding: 24px;
-    transition: all 0.3s ease;
-    border: 1px solid rgba(0,0,0,0.03);
-}
-
-.card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 30px rgba(0,0,0,0.08);
-}
-
-.card .category { font-size: 11px; font-weight: 700; color: #86868b; text-transform: uppercase; }
-.card .size { font-size: 24px; font-weight: 700; margin: 8px 0; }
-.card .price { font-size: 16px; color: var(--accent); font-weight: 600; }
-
-.activation-section {
-    padding: 60px 20px;
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
 }
 
-.activation-card {
-    background: #fff;
-    width: 100%;
-    max-width: 500px;
-    padding: 40px;
-    border-radius: 24px;
-    box-shadow: 0 20px 40px rgba(0,0,0,0.04);
+.column {
+    width: 30%;
+}
+
+h2 {
+    color: white;
+    text-align: center;
+    background-color: #f44336; /* Cor de fundo vermelha Vodacom */
+    padding: 10px 0;
+    border-radius: 5px;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+li {
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.mb {
+    font-weight: bold;
+}
+
+.price {
+    color: #f44336; /* Cor de preço vermelha Vodacom */
+}
+
+.extras {
+    background-color: black;
+    padding: 50px 0;
+}
+
+h3 {
+    color: white;
+    background-color: #f44336; /* Cor de fundo vermelha Vodacom */
+    padding: 10px 0;
+    text-align: center;
+    border-radius: 5px;
+}
+
+footer {
+    background-color: #333;
+    color: white;
+    padding: 20px 0;
     text-align: center;
 }
 
-textarea {
-    width: 100%;
-    height: 120px;
-    border-radius: 12px;
-    border: 1px solid #d2d2d7;
-    padding: 15px;
-    margin: 20px 0;
-    font-family: inherit;
-    resize: none;
-    box-sizing: border-box;
+a {
+    color: white;
+    text-decoration: none;
 }
 
-.apple-btn-large {
-    background: var(--accent);
-    color: white;
-    border: none;
-    padding: 16px 32px;
-    border-radius: 12px;
-    font-size: 16px;
-    font-weight: 600;
-    cursor: pointer;
-    width: 100%;
+.metodos-pagamento {
+    margin-top: 10px;
 }
